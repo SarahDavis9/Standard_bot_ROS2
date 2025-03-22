@@ -1,0 +1,37 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from action_interfaces/action/SetJointPos.action
+// generated code does not contain a copyright notice
+
+
+module action_interfaces {
+  module action {
+    @verbatim (language="comment", text=
+      "Goal" "\n"
+      " Set the robot to a series of joint angles Should be in the range of [-179.0, 179.0]")
+    struct SetJointPos_Goal {
+      @verbatim (language="comment", text=
+        "Joint angles")
+      float joint1;
+
+      float joint2;
+
+      float joint3;
+
+      float joint4;
+
+      float joint5;
+
+      float joint6;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct SetJointPos_Result {
+      boolean success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct SetJointPos_Feedback {
+      sequence<float> distance_left;
+    };
+  };
+};

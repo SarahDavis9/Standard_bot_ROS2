@@ -1,0 +1,16 @@
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/launch/demo.launch.py
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/ament_index/resource_index/package_run_dependencies/standard_bot_bringup
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/ament_index/resource_index/parent_prefix_path/standard_bot_bringup
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/environment/ament_prefix_path.sh
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/environment/ament_prefix_path.dsv
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/environment/path.sh
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/environment/path.dsv
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/local_setup.bash
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/local_setup.sh
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/local_setup.zsh
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/local_setup.dsv
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/package.dsv
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/ament_index/resource_index/packages/standard_bot_bringup
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/cmake/standard_bot_bringupConfig.cmake
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/cmake/standard_bot_bringupConfig-version.cmake
+/home/sarah/sb_ros2_ws/src/install/standard_bot_bringup/share/standard_bot_bringup/package.xml

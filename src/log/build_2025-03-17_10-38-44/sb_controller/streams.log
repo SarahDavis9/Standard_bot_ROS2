@@ -1,0 +1,25 @@
+[1.572s] Invoking command in '/home/sarah/sb_ros2_ws/src/sb_controller': PYTHONPATH=/home/sarah/sb_ros2_ws/src/build/sb_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sarah/sb_ros2_ws/src/install/sb_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/sb_controller build --build-base /home/sarah/sb_ros2_ws/src/build/sb_controller/build install --record /home/sarah/sb_ros2_ws/src/build/sb_controller/install.log --single-version-externally-managed install_data
+[1.678s] running egg_info
+[1.678s] writing ../build/sb_controller/sb_controller.egg-info/PKG-INFO
+[1.678s] writing dependency_links to ../build/sb_controller/sb_controller.egg-info/dependency_links.txt
+[1.678s] writing entry points to ../build/sb_controller/sb_controller.egg-info/entry_points.txt
+[1.678s] writing requirements to ../build/sb_controller/sb_controller.egg-info/requires.txt
+[1.678s] writing top-level names to ../build/sb_controller/sb_controller.egg-info/top_level.txt
+[1.679s] reading manifest file '../build/sb_controller/sb_controller.egg-info/SOURCES.txt'
+[1.680s] writing manifest file '../build/sb_controller/sb_controller.egg-info/SOURCES.txt'
+[1.680s] running build
+[1.680s] running build_py
+[1.680s] running install
+[1.681s] running install_lib
+[1.681s] running install_data
+[1.681s] running install_egg_info
+[1.682s] removing '/home/sarah/sb_ros2_ws/src/install/sb_controller/lib/python3.10/site-packages/sb_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.682s] Copying ../build/sb_controller/sb_controller.egg-info to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/python3.10/site-packages/sb_controller-0.0.0-py3.10.egg-info
+[1.684s] running install_scripts
+[1.693s] Installing standard_bot_camera_feed_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+[1.693s] Installing standard_bot_camera_subscriber script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+[1.693s] Installing standard_bot_set_cart_pose_server_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+[1.694s] Installing standard_bot_set_joint_rot_server_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+[1.694s] Installing standard_bot_status_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+[1.694s] writing list of installed files to '/home/sarah/sb_ros2_ws/src/build/sb_controller/install.log'
+[1.703s] Invoked command in '/home/sarah/sb_ros2_ws/src/sb_controller' returned '0': PYTHONPATH=/home/sarah/sb_ros2_ws/src/build/sb_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sarah/sb_ros2_ws/src/install/sb_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/sb_controller build --build-base /home/sarah/sb_ros2_ws/src/build/sb_controller/build install --record /home/sarah/sb_ros2_ws/src/build/sb_controller/install.log --single-version-externally-managed install_data
