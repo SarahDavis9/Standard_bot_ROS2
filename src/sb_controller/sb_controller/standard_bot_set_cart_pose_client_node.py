@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # ROS packages
 import rclpy
 from rclpy.node import Node
@@ -9,7 +11,7 @@ from action_interfaces.action import SetCartPos
 
 from time import sleep
 
-class CartPositionActions(Node):
+class CartPositionActionClient(Node):
     def __init__(self):
         super().__init__("cart_pose_client")
 		
@@ -19,10 +21,15 @@ class CartPositionActions(Node):
 		
     def run_test(self):
         
-		# Cartesian
-        print("Beginning Dice Pickup")
-        self.cart_ac.wait_for_server() # Wait till its ready
-        cart_goal = SetCartPos.Goal() # Make goal
+		# Cartesian Action Server Test
+        print("Set Cartesian Position")
+
+        # Wait till its ready
+        self.cart_ac.wait_for_server() 
+        
+        # Create goal
+        cart_goal = SetCartPos.Goal() 
+
         # Add all coordinates 
         cart_goal.x = 0.3451
         cart_goal.y = 0.3759
@@ -35,8 +42,6 @@ class CartPositionActions(Node):
         future.add_done_callback(self.goal_response_callback)
         sleep(3) 
 
-
-#------- Helper functions -------------
     def goal_response_callback(self, future):
         goal_handle = future.result()
         if not goal_handle.accepted:
@@ -60,10 +65,13 @@ class CartPositionActions(Node):
 def main(args=None):
     rclpy.init()
 
-    cart_pose_action_client = CartPositionActions()
+    # Create the action client
+    cart_pose_action_client = CartPositionActionClient()
 
+    # Spin up the node
     rclpy.spin(cart_pose_action_client)
 
+    # Shut node down
     cart_pose_action_client.destroy()
     rclpy.shutdown()
 

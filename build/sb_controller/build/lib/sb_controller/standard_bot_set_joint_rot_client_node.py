@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # ROS packages
 import rclpy
 from rclpy.node import Node
@@ -9,7 +11,7 @@ from action_interfaces.action import SetJointPos
 
 from time import sleep
 
-class JointRotationActions(Node):
+class JointRotationActionClient(Node):
     def __init__(self):
         super().__init__("joint_rot_client")
 		
@@ -19,10 +21,15 @@ class JointRotationActions(Node):
 		
     def run_test(self):
 
-        # Joints
+        # Joint Action Server Test
         print("Running Joint test")
+
+        # Wait till its ready
         self.joints_ac.wait_for_server()
+
+        # Create goal
         joint_goal = SetJointPos.Goal()
+
         # Add all joints
         joint_goal.joint1 = -2.05779767
         joint_goal.joint2 = 0.2882086
@@ -34,8 +41,6 @@ class JointRotationActions(Node):
         future.add_done_callback(self.goal_response_callback)
         sleep(3) 
 
-
-#------- Helper functions -------------
     def goal_response_callback(self, future):
         goal_handle = future.result()
         if not goal_handle.accepted:
@@ -59,10 +64,13 @@ class JointRotationActions(Node):
 def main(args=None):
     rclpy.init()
 
-    joint_rot_action_client = JointRotationActions()
+    # Create the action client
+    joint_rot_action_client = JointRotationActionClient()
 
+    # Spin up the node
     rclpy.spin(joint_rot_action_client)
 
+    # Shut node down
     joint_rot_action_client.destroy()
     rclpy.shutdown()
 

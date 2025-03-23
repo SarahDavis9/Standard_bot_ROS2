@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionServer, GoalResponse, CancelResponse
@@ -28,7 +29,6 @@ class StandardBotSetCartPoseActionServer(Node):
         self.declare_parameter("robot_url", "default_value")
         self.declare_parameter("robot_token", "default_value")
 
-        # Simon:
         self.sdk = StandardBotsRobot(
             url=self.get_parameter("robot_url").value,
             token=self.get_parameter("robot_token").value,
@@ -178,10 +178,13 @@ class StandardBotSetCartPoseActionServer(Node):
 def main(args=None):
     rclpy.init()
 
+    # Create action server
     cart_pose_action_server = StandardBotSetCartPoseActionServer()
 
+    # Spin up the node
     rclpy.spin(cart_pose_action_server)
 
+    # Shut down the node
     cart_pose_action_server.destroy()
     rclpy.shutdown()
 

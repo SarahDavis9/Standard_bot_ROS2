@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # ROS packages
 import rclpy
 from rclpy.node import Node
@@ -66,8 +68,14 @@ class OnRobotGripperActions(Node):
 
 def main(args=None):
     rclpy.init()
+
+    # Create the action client
     jon_robot_gripper_action_client = OnRobotGripperActions()
+
+    # Spin up the node
     rclpy.spin(jon_robot_gripper_action_client)
+
+    # Shut down the node
     jon_robot_gripper_action_client.destroy()
     rclpy.shutdown()
 

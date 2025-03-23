@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionServer, GoalResponse, CancelResponse
@@ -5,13 +6,6 @@ from std_msgs.msg import Bool
 from standardbots import StandardBotsRobot, models
 from action_interfaces.action import SetJointPos
 import math
-
-# sdk = StandardBotsRobot(
-#     url='http://129.101.98.221:3000',
-#     token='15uh3g-c7kio-5rc498-hj6rj',
-#     robot_kind=StandardBotsRobot.RobotKind.Live
-#     )
-
 
 class StandardBotSetJointRotActionServer(Node):
     def __init__(self):
@@ -160,10 +154,13 @@ class StandardBotSetJointRotActionServer(Node):
 def main(args=None):
     rclpy.init()
 
+    # Create the action server
     joint_rot_action_server = StandardBotSetJointRotActionServer()
 
+    # Spin up the node
     rclpy.spin(joint_rot_action_server)
 
+    # Shut down the node
     joint_rot_action_server.destroy()
     rclpy.shutdown()
 

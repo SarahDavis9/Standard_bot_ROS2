@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+
+# ROS packages
 import rclpy
 import sys
 from rclpy.node import Node
@@ -94,10 +96,13 @@ class StandardBotOnRobotActionServer(Node):
 def main(args=None):
     rclpy.init()
 
+    # Create the action server
     onrobot_gripper_action_server = StandardBotOnRobotActionServer()
 
+    # Spin up the node
     rclpy.spin(onrobot_gripper_action_server)
 
+    # Shut down the node
     onrobot_gripper_action_server.destroy()
     rclpy.shutdown()
 

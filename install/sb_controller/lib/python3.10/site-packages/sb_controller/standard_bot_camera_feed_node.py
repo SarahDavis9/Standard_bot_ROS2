@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
@@ -8,13 +9,7 @@ import numpy as np
 from standardbots import StandardBotsRobot, models
 from rclpy.callback_groups import ReentrantCallbackGroup
 
-# sdk = StandardBotsRobot(
-#     url='http://129.101.98.221:3000',
-#     token='15uh3g-c7kio-5rc498-hj6rj',
-#     robot_kind=StandardBotsRobot.RobotKind.Live
-#     )
-
-class MyStandardBotCameraFeed(Node):
+class StandardBotCameraFeed(Node):
   
   def __init__(self):
     super().__init__('standard_bot_camera_feed')
@@ -50,7 +45,6 @@ class MyStandardBotCameraFeed(Node):
 
     with self.sdk.connection():
         try:
-          # res = self.sdk.camera.data.get_color_frame(body)
           res = self.sdk.camera.data.get_color_frame(body)
           print(f"Result Data: {res.data}")
           res.ok()  # Runs okay
@@ -72,10 +66,17 @@ class MyStandardBotCameraFeed(Node):
           self.get_logger().info('Publishing video frame')
         except: 
           self.get_logger().info(f'Error: {res.status}')
+
 def main(args=None):
   rclpy.init(args=args)
-  camera_feed_publisher = MyStandardBotCameraFeed()
+
+  # Create camera feed node (publisher)
+  camera_feed_publisher = StandardBotCameraFeed()
+
+  # Spin up the node
   rclpy.spin(camera_feed_publisher)
+
+  # Shut down the node
   camera_feed_publisher.destroy_node()
   rclpy.shutdown()
    

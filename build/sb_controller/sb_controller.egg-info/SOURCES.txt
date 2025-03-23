@@ -12,7 +12,6 @@ resource/sb_controller
 sb_controller/__init__.py
 sb_controller/standard_bot_camera_feed_node.py
 sb_controller/standard_bot_camera_subscriber.py
-sb_controller/standard_bot_controller_node.py
 sb_controller/standard_bot_set_cart_pose_client_node.py
 sb_controller/standard_bot_set_cart_pose_server_node.py
 sb_controller/standard_bot_set_joint_rot_client_node.py

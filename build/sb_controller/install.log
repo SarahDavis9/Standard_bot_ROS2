@@ -2,7 +2,6 @@
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/standard_bot_status_node.py
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/standart_bot_on_robot_gripper_server_node.py
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/standard_bot_camera_feed_node.py
-/home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/standard_bot_controller_node.py
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/standart_bot_on_robot_gripper_client_node.py
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/standard_bot_set_cart_pose_server_node.py
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/__init__.py
@@ -13,7 +12,6 @@
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/__pycache__/standard_bot_status_node.cpython-310.pyc
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/__pycache__/standart_bot_on_robot_gripper_server_node.cpython-310.pyc
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/__pycache__/standard_bot_camera_feed_node.cpython-310.pyc
-/home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/__pycache__/standard_bot_controller_node.cpython-310.pyc
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/__pycache__/standart_bot_on_robot_gripper_client_node.cpython-310.pyc
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/__pycache__/standard_bot_set_cart_pose_server_node.cpython-310.pyc
 /home/sarah/sb_ros2_ws/install/sb_controller/lib/python3.10/site-packages/sb_controller/__pycache__/__init__.cpython-310.pyc
