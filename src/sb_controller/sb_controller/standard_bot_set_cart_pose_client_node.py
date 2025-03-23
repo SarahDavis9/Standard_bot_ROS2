@@ -6,7 +6,6 @@ from rclpy.node import Node
 from rclpy.action.client import ActionClient
 
 # Action imports
-import action_interfaces
 from action_interfaces.action import SetCartPos
 
 from time import sleep

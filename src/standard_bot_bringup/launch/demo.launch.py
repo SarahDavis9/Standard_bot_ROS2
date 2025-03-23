@@ -4,7 +4,6 @@ from launch_ros.actions import Node
 def generate_launch_description():
     ld = LaunchDescription()
 
-
     status_node = Node(
         package="sb_controller",
         executable="standard_bot_status_node",
