@@ -85,7 +85,6 @@ def generate_launch_description():
         ]
     )
 
-    # ld.add_action(controller)
     ld.add_action(status_node)
     ld.add_action(camera_node)
     ld.add_action(camera_subscriber)
