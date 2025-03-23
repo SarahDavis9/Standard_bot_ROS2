@@ -12,6 +12,7 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "actions/SetCartPose.action"
   "actions/SetJointRot.action"
+  "actions/OnRobotGripper.action"
   DEPENDENCIES action_msgs std_msgs
 )
 
@@ -20,6 +21,7 @@ install(
   FILES 
     "actions/SetCartPose.action"
     "actions/SetJointRot.action"
+    "actions/OnRobotGripper.action"
   DESTINATION share/${PROJECT_NAME}/actions
 )
 

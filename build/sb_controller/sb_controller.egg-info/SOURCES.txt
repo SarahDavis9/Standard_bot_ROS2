@@ -13,9 +13,13 @@ sb_controller/__init__.py
 sb_controller/standard_bot_camera_feed_node.py
 sb_controller/standard_bot_camera_subscriber.py
 sb_controller/standard_bot_controller_node.py
+sb_controller/standard_bot_set_cart_pose_client_node.py
 sb_controller/standard_bot_set_cart_pose_server_node.py
+sb_controller/standard_bot_set_joint_rot_client_node.py
 sb_controller/standard_bot_set_joint_rot_server_node.py
 sb_controller/standard_bot_status_node.py
+sb_controller/standart_bot_on_robot_gripper_client_node.py
+sb_controller/standart_bot_on_robot_gripper_server_node.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

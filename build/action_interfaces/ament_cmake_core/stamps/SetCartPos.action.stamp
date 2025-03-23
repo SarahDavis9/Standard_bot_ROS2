@@ -1,0 +1,18 @@
+#Goal
+
+# Cartesian Coordinates
+float32 x 
+float32 y
+float32 z
+
+# Orientation
+float32 q_x 0.0
+float32 q_y 0.0
+float32 q_z 0.0
+float32 q_w 1.0
+---
+#Result
+bool success
+---
+#Feedback
+float32[] distance_left

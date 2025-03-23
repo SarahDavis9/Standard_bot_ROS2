@@ -1,0 +1,11 @@
+#Goal
+# For opening and closing the OnRobot gripper. 
+
+float32 width # Jaw distance in meters within range [0.0176-0.1176]
+float32 force # Force in Newtons within range [0-120]
+---
+#Result
+
+bool success
+---
+#Feedback

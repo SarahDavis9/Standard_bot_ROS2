@@ -28,5 +28,6 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "action/SetCartPos.action"
   "action/SetJointPos.action"
+  "action/OnRobotGripper.action"
 )
 ament_package()

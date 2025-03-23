@@ -67,6 +67,24 @@ def generate_launch_description():
         ]
     )
 
+    on_robot_gripper_action_server = Node(
+        package="sb_controller",
+        executable="standart_bot_on_robot_gripper_server_node",
+        parameters=[
+            {"robot_url": "http://129.101.98.221:3000"},
+            {"robot_token": "xjis-b8j7nxag-2jk4rs-7i3g65g"}
+        ]
+    )
+    
+    on_robot_gripper_action_client = Node(
+        package="sb_controller",
+        executable="standart_bot_on_robot_gripper_client_node",
+        parameters=[
+            {"robot_url": "http://129.101.98.221:3000"},
+            {"robot_token": "xjis-b8j7nxag-2jk4rs-7i3g65g"}
+        ]
+    )
+
     # ld.add_action(controller)
     ld.add_action(status_node)
     ld.add_action(camera_node)
@@ -75,5 +93,7 @@ def generate_launch_description():
     ld.add_action(cart_pose_action_client)
     ld.add_action(joint_rot_action_server)
     ld.add_action(joint_rot_action_client)
+    ld.add_action(on_robot_gripper_action_server)
+    ld.add_action(on_robot_gripper_action_client)
 
     return ld

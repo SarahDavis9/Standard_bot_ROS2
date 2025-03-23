@@ -1,23 +1,23 @@
 import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionServer, GoalResponse, CancelResponse
-from sb_controller.actions import SetCartPose
 from standardbots import StandardBotsRobot, models
+from std_msgs.msg import Bool
+from action_interfaces.action import SetCartPos
 
-
-
-class MyStandardBotSetCartPoseActionServer(Node):
+class StandardBotSetCartPoseActionServer(Node):
     def __init__(self):
         super().__init__('cart_pose_server')
 
-        self.goal = SetCartPose.Goal()
+        self.goal = SetCartPos.Goal()
 
-        self._action_server = ActionServer(self, SetCartPose, "/standardbot1/set_cart_position", 
+        self._action_server = ActionServer(self, SetCartPos, "/standardbot1/set_cart_position", 
                                         execute_callback = self.execute_callback, 
                                         goal_callback = self.goal_callback,
                                         cancel_callback = self.cancel_callback)
 
         self.subscription = self.create_subscription(
+            Bool,
             '/standardbot1/is_moving', 
             self.listener_callback, 
             10)
@@ -43,10 +43,47 @@ class MyStandardBotSetCartPoseActionServer(Node):
     def goal_callback(self, goal_request):
         """ Accepts or Rejects client request to begin Action """
         self.goal = goal_request 
-        
-        # For Joint, rotations, check for for +- 360degrees for each joint
-        # For Cartesian, we need to check the quaternion. 
 
+        # TODO: Determine the min/max cartesian position and orientation values
+
+        # min_x = 0
+        # max_x = 0
+        # min_y = 0
+        # max_y = 0
+        # min_z = 0
+        # max_z = 0
+        # min_q_x = 0
+        # max_q_x = 0
+        # min_q_y = 0
+        # max_q_y = 0
+        # min_q_z = 0
+        # max_q_z = 0
+        # min_q_w = 0
+        # max_q_w = 0
+
+        # # For Cartesian, we need to check the quaternion. 
+        # if self.goal.x > max_x or self.goal.x < -min_x:
+        #     self.get_logger().info(f'X should be between [?,?] meters, got: {self.goal.x}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.y > max_y or self.goal.y < min_y:
+        #     self.get_logger().info(f'Y should be between [?,?] meters, got: {self.goal.y}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.z > max_z or self.goal.z < min_z:
+        #     self.get_logger().info(f'Z should be between [?,?] meters, got: {self.goal.z}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.q_x > max_q_x or self.goal.q_x < min_q_x:
+        #     self.get_logger().info(f'Q_X should be between [?,?] meters, got: {self.goal.q_x}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.q_y > max_q_y or self.goal.q_y < min_q_y:
+        #     self.get_logger().info(f'Q_Y should be between [?,?] meters, got: {self.goal.q_y}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.q_z > max_q_z or self.goal.q_z < min_q_z:
+        #     self.get_logger().info(f'Q_Z should be between [?,?] meters, got: {self.goal.q_z}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.q_w > max_q_w or self.goal.q_w < min_q_w:
+        #     self.get_logger().info(f'Q_W should be between [?,?] meters, got: {self.goal.q_w}')
+        #     return GoalResponse.REJECT        
+        
         # If here, all values are acceptable
         self.get_logger().info('Cart goal recieved: '+ str(self.goal))
         return GoalResponse.ACCEPT
@@ -64,7 +101,7 @@ class MyStandardBotSetCartPoseActionServer(Node):
     def execute_callback(self, goal_handle):
         try:
             # Create base for feedback
-            feedback_msg = SetCartPose.Feedback()
+            feedback_msg = SetCartPos.Feedback()
             with self.sdk.connection():
                 self.sdk.movement.brakes.unbrake().ok()
                 response = self.sdk.movement.position.get_arm_position()
@@ -124,13 +161,13 @@ class MyStandardBotSetCartPoseActionServer(Node):
                     feedback_msg.distance_left = distance
                                 
             goal_handle.succeed()
-            result = SetCartPose.Result()
+            result = SetCartPos.Result()
             result.success = True
         except:
             goal_handle.canceled()
-            result = SetCartPose.Result()
+            result = SetCartPos.Result()
             result.success = False
-        self.goal = SetCartPose.Goal() #Reset
+        self.goal = SetCartPos.Goal() #Reset
         return result
 
     def destroy(self):
@@ -141,7 +178,7 @@ class MyStandardBotSetCartPoseActionServer(Node):
 def main(args=None):
     rclpy.init()
 
-    cart_pose_action_server = MyStandardBotSetCartPoseActionServer()
+    cart_pose_action_server = StandardBotSetCartPoseActionServer()
 
     rclpy.spin(cart_pose_action_server)
 

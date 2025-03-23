@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "action_interfaces__py",
+		"source" : "/home/sarah/sb_ros2_ws/build/action_interfaces/action_interfaces__py"
+	}
+}

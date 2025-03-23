@@ -29,7 +29,10 @@ setup(
             'standard_bot_set_cart_pose_server_node = sb_controller.standard_bot_set_cart_pose_server_node:main',
             'standard_bot_set_cart_pose_client_node = sb_controller.standard_bot_set_cart_pose_client_node:main',
             'standard_bot_set_joint_rot_server_node = sb_controller.standard_bot_set_joint_rot_server_node:main',
-            'standard_bot_set_joint_rot_client_node = sb_controller.standard_bot_set_joint_rot_client_node:main'
+            'standard_bot_set_joint_rot_client_node = sb_controller.standard_bot_set_joint_rot_client_node:main',
+            'standart_bot_on_robot_gripper_server_node = sb_controller.standart_bot_on_robot_gripper_server_node:main',
+            'standart_bot_on_robot_gripper_client_node = sb_controller.standart_bot_on_robot_gripper_client_node:main',
+            
         ],
     },
 )

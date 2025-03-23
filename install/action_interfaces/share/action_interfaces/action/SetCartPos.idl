@@ -1,0 +1,44 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from action_interfaces/action/SetCartPos.action
+// generated code does not contain a copyright notice
+
+
+module action_interfaces {
+  module action {
+    @verbatim (language="comment", text=
+      "Goal")
+    struct SetCartPos_Goal {
+      @verbatim (language="comment", text=
+        "Cartesian Coordinates")
+      float x;
+
+      float y;
+
+      float z;
+
+      @verbatim (language="comment", text=
+        "Orientation")
+      @default (value=0.0)
+      float q_x;
+
+      @default (value=0.0)
+      float q_y;
+
+      @default (value=0.0)
+      float q_z;
+
+      @default (value=1.0)
+      float q_w;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct SetCartPos_Result {
+      boolean success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct SetCartPos_Feedback {
+      sequence<float> distance_left;
+    };
+  };
+};
