@@ -4,7 +4,8 @@
   "template_dir": "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource",
   "idl_tuples": [
     "/home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_adapter/action_interfaces:action/SetCartPos.idl",
-    "/home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_adapter/action_interfaces:action/SetJointPos.idl"
+    "/home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_adapter/action_interfaces:action/SetJointPos.idl",
+    "/home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_adapter/action_interfaces:action/OnRobotGripper.idl"
   ],
   "ros_interface_dependencies": [
     "action_msgs:/opt/ros/humble/share/action_msgs/msg/GoalInfo.idl",
@@ -33,6 +34,7 @@
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__traits.hpp.em",
     "/home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_adapter/action_interfaces/action/SetCartPos.idl",
     "/home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_adapter/action_interfaces/action/SetJointPos.idl",
+    "/home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_adapter/action_interfaces/action/OnRobotGripper.idl",
     "/opt/ros/humble/share/action_msgs/msg/GoalInfo.idl",
     "/opt/ros/humble/share/action_msgs/msg/GoalStatus.idl",
     "/opt/ros/humble/share/action_msgs/msg/GoalStatusArray.idl",

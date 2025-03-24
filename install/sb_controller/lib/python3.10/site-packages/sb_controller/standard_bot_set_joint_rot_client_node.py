@@ -6,7 +6,6 @@ from rclpy.node import Node
 from rclpy.action.client import ActionClient
 
 # Action Interfaces
-import action_interfaces
 from action_interfaces.action import SetJointPos
 
 from time import sleep

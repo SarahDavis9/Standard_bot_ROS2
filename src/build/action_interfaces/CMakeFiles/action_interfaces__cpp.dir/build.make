@@ -76,6 +76,11 @@ CMakeFiles/action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action
 CMakeFiles/action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/set_joint_pos__struct.hpp
 CMakeFiles/action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/set_joint_pos__traits.hpp
 CMakeFiles/action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/set_joint_pos__type_support.hpp
+CMakeFiles/action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/on_robot_gripper.hpp
+CMakeFiles/action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__builder.hpp
+CMakeFiles/action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__struct.hpp
+CMakeFiles/action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__traits.hpp
+CMakeFiles/action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__type_support.hpp
 CMakeFiles/action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
 
 rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
@@ -95,6 +100,7 @@ rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp: /opt/ros/humble/
 rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__traits.hpp.em
 rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp: rosidl_adapter/action_interfaces/action/SetCartPos.idl
 rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp: rosidl_adapter/action_interfaces/action/SetJointPos.idl
+rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp: rosidl_adapter/action_interfaces/action/OnRobotGripper.idl
 rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp: /opt/ros/humble/share/action_msgs/msg/GoalInfo.idl
 rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp: /opt/ros/humble/share/action_msgs/msg/GoalStatus.idl
 rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp: /opt/ros/humble/share/action_msgs/msg/GoalStatusArray.idl
@@ -132,7 +138,26 @@ rosidl_generator_cpp/action_interfaces/action/detail/set_joint_pos__traits.hpp: 
 rosidl_generator_cpp/action_interfaces/action/detail/set_joint_pos__type_support.hpp: rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/action_interfaces/action/detail/set_joint_pos__type_support.hpp
 
+rosidl_generator_cpp/action_interfaces/action/on_robot_gripper.hpp: rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/action_interfaces/action/on_robot_gripper.hpp
+
+rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__builder.hpp: rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__builder.hpp
+
+rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__struct.hpp: rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__struct.hpp
+
+rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__traits.hpp: rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__traits.hpp
+
+rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__type_support.hpp: rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__type_support.hpp
+
 action_interfaces__cpp: CMakeFiles/action_interfaces__cpp
+action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__builder.hpp
+action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__struct.hpp
+action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__traits.hpp
+action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/on_robot_gripper__type_support.hpp
 action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/set_cart_pos__builder.hpp
 action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/set_cart_pos__struct.hpp
 action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/set_cart_pos__traits.hpp
@@ -141,6 +166,7 @@ action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/set
 action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/set_joint_pos__struct.hpp
 action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/set_joint_pos__traits.hpp
 action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/detail/set_joint_pos__type_support.hpp
+action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/on_robot_gripper.hpp
 action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/set_cart_pos.hpp
 action_interfaces__cpp: rosidl_generator_cpp/action_interfaces/action/set_joint_pos.hpp
 action_interfaces__cpp: CMakeFiles/action_interfaces__cpp.dir/build.make

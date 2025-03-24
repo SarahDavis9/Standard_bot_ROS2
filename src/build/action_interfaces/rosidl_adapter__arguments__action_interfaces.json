@@ -2,6 +2,7 @@
   "package_name": "action_interfaces",
   "non_idl_tuples": [
     "/home/sarah/sb_ros2_ws/src/action_interfaces:action/SetCartPos.action",
-    "/home/sarah/sb_ros2_ws/src/action_interfaces:action/SetJointPos.action"
+    "/home/sarah/sb_ros2_ws/src/action_interfaces:action/SetJointPos.action",
+    "/home/sarah/sb_ros2_ws/src/action_interfaces:action/OnRobotGripper.action"
   ]
 }

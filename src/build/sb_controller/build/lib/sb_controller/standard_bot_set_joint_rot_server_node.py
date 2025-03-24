@@ -1,24 +1,19 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionServer, GoalResponse, CancelResponse
 from std_msgs.msg import Bool
 from standardbots import StandardBotsRobot, models
 from action_interfaces.action import SetJointPos
+import math
 
-# sdk = StandardBotsRobot(
-#     url='http://129.101.98.221:3000',
-#     token='15uh3g-c7kio-5rc498-hj6rj',
-#     robot_kind=StandardBotsRobot.RobotKind.Live
-#     )
-
-
-class MyStandardBotSetJointRotActionServer(Node):
+class StandardBotSetJointRotActionServer(Node):
     def __init__(self):
-        super().__init__('joint_pose_server')
+        super().__init__('joint_rot_server')
 
         self.goal = SetJointPos.Goal()
 
-        self._action_server = ActionServer(self, SetJointPos, "/standardbot1/set_joint_position", 
+        self._action_server = ActionServer(self, SetJointPos, "/standardbot1/set_joint_rotations", 
                                         execute_callback = self.execute_callback, 
                                         goal_callback = self.goal_callback,
                                         cancel_callback = self.cancel_callback)
@@ -35,7 +30,6 @@ class MyStandardBotSetJointRotActionServer(Node):
         self.declare_parameter("robot_url", "default_value")
         self.declare_parameter("robot_token", "default_value")
 
-        # Simon:
         self.sdk = StandardBotsRobot(
             url=self.get_parameter("robot_url").value,
             token=self.get_parameter("robot_token").value,
@@ -51,9 +45,34 @@ class MyStandardBotSetJointRotActionServer(Node):
         """ Accepts or Rejects client request to begin Action """
         self.goal = goal_request 
         
-        # For Joint, rotations, check for for +- 360degrees for each joint
-        # For Cartesian, we need to check the quaternion. 
+        # For Joint, rotations, check for for +- 2*PI radians (equivalent to +- 360degrees) for each joint
+        min_rotation = -2 * math.pi
+        max_rotation = 2 * math.pi
+        
+        # Check that it recieved a valid goal
+        if self.goal.joint1 > max_rotation or self.goal.joint1 < min_rotation:
+            self.get_logger().info(f'Joint1 should be between [-2 * PI, 2 * PI] radians, got: {self.goal.joint1}')
+            return GoalResponse.REJECT
+        elif self.goal.joint2 > max_rotation or self.goal.joint2 < min_rotation:
+            self.get_logger().info(f'Joint2 should be between [-2 * PI, 2 * PI] radians, got: {self.goal.joint2}')
+            return GoalResponse.REJECT
+        elif self.goal.joint3 > max_rotation or self.goal.joint3 < min_rotation:
+            self.get_logger().info(f'Joint3 should be between [-2 * PI, 2 * PI] radians, got: {self.goal.joint3}')
+            return GoalResponse.REJECT
+        elif self.goal.joint4 > max_rotation or self.goal.joint4 < min_rotation:
+            self.get_logger().info(f'Joint4 should be between [-2 * PI, 2 * PI] radians, got: {self.goal.joint4}')
+            return GoalResponse.REJECT
+        elif self.goal.joint5 > max_rotation or self.goal.joint5 < min_rotation:
+            self.get_logger().info(f'Joint5 should be between [-2 * PI, 2 * PI] radians, got: {self.goal.joint5}')
+            return GoalResponse.REJECT
+        elif self.goal.joint6 > max_rotation or self.goal.joint6 < min_rotation:
+            self.get_logger().info(f'Joint6 should be between [-2 * PI, 2 * PI] radians, got: {self.goal.joint6}')
+            return GoalResponse.REJECT
 
+        else:
+            self.get_logger().info('OnRobot goal recieved: '+ str(self.goal))
+            return GoalResponse.ACCEPT
+        
         # If here, all values are acceptable
         self.get_logger().info('Cart goal recieved: '+ str(self.goal))
         return GoalResponse.ACCEPT
@@ -135,10 +154,13 @@ class MyStandardBotSetJointRotActionServer(Node):
 def main(args=None):
     rclpy.init()
 
-    joint_rot_action_server = MyStandardBotSetJointRotActionServer()
+    # Create the action server
+    joint_rot_action_server = StandardBotSetJointRotActionServer()
 
+    # Spin up the node
     rclpy.spin(joint_rot_action_server)
 
+    # Shut down the node
     joint_rot_action_server.destroy()
     rclpy.shutdown()
 

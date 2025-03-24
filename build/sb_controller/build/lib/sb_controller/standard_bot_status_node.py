@@ -2,11 +2,9 @@
 import rclpy
 import rclpy.subscription
 from rclpy.node import Node
-from rclpy.executors import MultiThreadedExecutor
 from rclpy.callback_groups import ReentrantCallbackGroup
-from standardbots import StandardBotsRobot, models
+from standardbots import StandardBotsRobot
 from geometry_msgs.msg import Pose
-from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from std_msgs.msg import Bool
 from std_msgs.msg import Float32MultiArray
 

@@ -8,10 +8,7 @@ from rclpy.action.client import ActionClient
 from time import sleep
 
 # Fanuc packages
-import action_interfaces
 from action_interfaces.action import OnRobotGripper
-
-
 
 class OnRobotGripperActions(Node):
     def __init__(self):

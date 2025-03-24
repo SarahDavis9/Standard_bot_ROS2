@@ -1,0 +1,30 @@
+running egg_info
+writing ../build/sb_controller/sb_controller.egg-info/PKG-INFO
+writing dependency_links to ../build/sb_controller/sb_controller.egg-info/dependency_links.txt
+writing entry points to ../build/sb_controller/sb_controller.egg-info/entry_points.txt
+writing requirements to ../build/sb_controller/sb_controller.egg-info/requires.txt
+writing top-level names to ../build/sb_controller/sb_controller.egg-info/top_level.txt
+reading manifest file '../build/sb_controller/sb_controller.egg-info/SOURCES.txt'
+writing manifest file '../build/sb_controller/sb_controller.egg-info/SOURCES.txt'
+running build
+running build_py
+copying sb_controller/standart_bot_on_robot_gripper_client_node.py -> /home/sarah/sb_ros2_ws/src/build/sb_controller/build/lib/sb_controller
+running install
+running install_lib
+copying /home/sarah/sb_ros2_ws/src/build/sb_controller/build/lib/sb_controller/standart_bot_on_robot_gripper_client_node.py -> /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/python3.10/site-packages/sb_controller
+byte-compiling /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/python3.10/site-packages/sb_controller/standart_bot_on_robot_gripper_client_node.py to standart_bot_on_robot_gripper_client_node.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/sarah/sb_ros2_ws/src/install/sb_controller/lib/python3.10/site-packages/sb_controller-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../build/sb_controller/sb_controller.egg-info to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/python3.10/site-packages/sb_controller-0.0.0-py3.10.egg-info
+running install_scripts
+Installing standard_bot_camera_feed_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+Installing standard_bot_camera_subscriber script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+Installing standard_bot_set_cart_pose_client_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+Installing standard_bot_set_cart_pose_server_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+Installing standard_bot_set_joint_rot_client_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+Installing standard_bot_set_joint_rot_server_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+Installing standard_bot_status_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+Installing standart_bot_on_robot_gripper_client_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+Installing standart_bot_on_robot_gripper_server_node script to /home/sarah/sb_ros2_ws/src/install/sb_controller/lib/sb_controller
+writing list of installed files to '/home/sarah/sb_ros2_ws/src/build/sb_controller/install.log'

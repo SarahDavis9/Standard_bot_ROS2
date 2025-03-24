@@ -1,0 +1,33 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from action_interfaces/action/OnRobotGripper.action
+// generated code does not contain a copyright notice
+
+
+module action_interfaces {
+  module action {
+    @verbatim (language="comment", text=
+      "Goal" "\n"
+      " For opening and closing the OnRobot gripper. ")
+    struct OnRobotGripper_Goal {
+      @verbatim (language="comment", text=
+        "Jaw distance in meters within range")
+      @unit (value="0.0176-0.1176")
+      float width;
+
+      @verbatim (language="comment", text=
+        "Force in Newtons within range")
+      @unit (value="0-120")
+      float force;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct OnRobotGripper_Result {
+      boolean success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct OnRobotGripper_Feedback {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};

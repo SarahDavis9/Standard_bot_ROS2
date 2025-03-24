@@ -2,19 +2,11 @@
 import rclpy
 import rclpy.subscription
 from rclpy.node import Node
-from rclpy.executors import MultiThreadedExecutor
 from rclpy.callback_groups import ReentrantCallbackGroup
-from standardbots import StandardBotsRobot, models
+from standardbots import StandardBotsRobot
 from geometry_msgs.msg import Pose
-from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from std_msgs.msg import Bool
 from std_msgs.msg import Float32MultiArray
-
-# sdk = StandardBotsRobot(
-#     url='http://129.101.98.221:3000',
-#     token='15uh3g-c7kio-5rc498-hj6rj',
-#     robot_kind=StandardBotsRobot.RobotKind.Live
-#     )
 
 class MyStandardBotStatusNode(Node):
     def __init__(self):
@@ -37,7 +29,6 @@ class MyStandardBotStatusNode(Node):
             token=self.get_parameter("robot_token").value,
             robot_kind=StandardBotsRobot.RobotKind.Live
             )
-
 
     def positions_equal(self, current_position, new_position):
         self.get_logger().info(f"CURRENT = {current_position.position.x}, NEW = {new_position.position.x}")
@@ -86,9 +77,6 @@ class MyStandardBotStatusNode(Node):
                 self.get_logger().info(f"Sending position coordinates: {message}")
                 self.cart_pose_publisher.publish(message) 
 
-                # print(f"Got Position: {position}")
-                # print(f"Got Orientation: {orientation}")
-
                 #---------------------------------------------------
                 # Publish the current joint position for the robot
                 #---------------------------------------------------
@@ -114,29 +102,22 @@ class MyStandardBotStatusNode(Node):
                     is_moving_msg.data = is_currently_moving
                     self.is_moving_publisher.publish(is_moving_msg)
                     self.is_moving = is_currently_moving
-
                 
             except Exception:
                 self.get_logger().debug(f"Received an error connecting to the robot: {data}")
-        
 
+def main():
+    rclpy.init()
 
-def main(args=None):
-    rclpy.init(args=args)
+    # Create the status node
     standard_bot_status = MyStandardBotStatusNode()
 
-    # robot_status_thread = threading.Thread(target=rclpy.spin, args=(standard_bot_status,))
-    exec = MultiThreadedExecutor(2)
-    exec.add_node(standard_bot_status)
+    # Spin up the node
+    rclpy.spin(standard_bot_status)
 
-    try:
-        exec.spin()
-
-    except KeyboardInterrupt:
-        pass
-    finally:
-        standard_bot_status.destroy_node()
-        rclpy.shutdown()
+    # Shut down the node
+    standard_bot_status.destroy_node()
+    rclpy.shutdown()
 
 if __name__ == "__main__":
     main()

@@ -5,7 +5,6 @@ import rclpy
 import sys
 from rclpy.node import Node
 from rclpy.action import ActionServer, GoalResponse, CancelResponse
-from std_msgs.msg import Bool
 from standardbots import StandardBotsRobot, models
 from action_interfaces.action import OnRobotGripper
 

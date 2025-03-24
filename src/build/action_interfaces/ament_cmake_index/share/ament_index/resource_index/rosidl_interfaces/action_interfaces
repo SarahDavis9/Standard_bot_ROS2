@@ -1,3 +1,5 @@
+action/OnRobotGripper.action
+action/OnRobotGripper.idl
 action/SetCartPos.action
 action/SetCartPos.idl
 action/SetJointPos.action

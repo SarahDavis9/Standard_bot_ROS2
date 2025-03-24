@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionServer, GoalResponse, CancelResponse
@@ -5,7 +6,7 @@ from standardbots import StandardBotsRobot, models
 from std_msgs.msg import Bool
 from action_interfaces.action import SetCartPos
 
-class MyStandardBotSetCartPoseActionServer(Node):
+class StandardBotSetCartPoseActionServer(Node):
     def __init__(self):
         super().__init__('cart_pose_server')
 
@@ -28,7 +29,6 @@ class MyStandardBotSetCartPoseActionServer(Node):
         self.declare_parameter("robot_url", "default_value")
         self.declare_parameter("robot_token", "default_value")
 
-        # Simon:
         self.sdk = StandardBotsRobot(
             url=self.get_parameter("robot_url").value,
             token=self.get_parameter("robot_token").value,
@@ -43,10 +43,47 @@ class MyStandardBotSetCartPoseActionServer(Node):
     def goal_callback(self, goal_request):
         """ Accepts or Rejects client request to begin Action """
         self.goal = goal_request 
-        
-        # For Joint, rotations, check for for +- 360degrees for each joint
-        # For Cartesian, we need to check the quaternion. 
 
+        # TODO: Determine the min/max cartesian position and orientation values
+
+        # min_x = 0
+        # max_x = 0
+        # min_y = 0
+        # max_y = 0
+        # min_z = 0
+        # max_z = 0
+        # min_q_x = 0
+        # max_q_x = 0
+        # min_q_y = 0
+        # max_q_y = 0
+        # min_q_z = 0
+        # max_q_z = 0
+        # min_q_w = 0
+        # max_q_w = 0
+
+        # # For Cartesian, we need to check the quaternion. 
+        # if self.goal.x > max_x or self.goal.x < -min_x:
+        #     self.get_logger().info(f'X should be between [?,?] meters, got: {self.goal.x}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.y > max_y or self.goal.y < min_y:
+        #     self.get_logger().info(f'Y should be between [?,?] meters, got: {self.goal.y}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.z > max_z or self.goal.z < min_z:
+        #     self.get_logger().info(f'Z should be between [?,?] meters, got: {self.goal.z}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.q_x > max_q_x or self.goal.q_x < min_q_x:
+        #     self.get_logger().info(f'Q_X should be between [?,?] meters, got: {self.goal.q_x}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.q_y > max_q_y or self.goal.q_y < min_q_y:
+        #     self.get_logger().info(f'Q_Y should be between [?,?] meters, got: {self.goal.q_y}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.q_z > max_q_z or self.goal.q_z < min_q_z:
+        #     self.get_logger().info(f'Q_Z should be between [?,?] meters, got: {self.goal.q_z}')
+        #     return GoalResponse.REJECT
+        # elif self.goal.q_w > max_q_w or self.goal.q_w < min_q_w:
+        #     self.get_logger().info(f'Q_W should be between [?,?] meters, got: {self.goal.q_w}')
+        #     return GoalResponse.REJECT        
+        
         # If here, all values are acceptable
         self.get_logger().info('Cart goal recieved: '+ str(self.goal))
         return GoalResponse.ACCEPT
@@ -141,10 +178,13 @@ class MyStandardBotSetCartPoseActionServer(Node):
 def main(args=None):
     rclpy.init()
 
-    cart_pose_action_server = MyStandardBotSetCartPoseActionServer()
+    # Create action server
+    cart_pose_action_server = StandardBotSetCartPoseActionServer()
 
+    # Spin up the node
     rclpy.spin(cart_pose_action_server)
 
+    # Shut down the node
     cart_pose_action_server.destroy()
     rclpy.shutdown()
 

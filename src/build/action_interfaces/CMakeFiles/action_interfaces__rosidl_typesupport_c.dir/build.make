@@ -77,6 +77,7 @@ rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp: /o
 rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp: /opt/ros/humble/share/rosidl_typesupport_c/resource/srv__type_support.cpp.em
 rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp: rosidl_adapter/action_interfaces/action/SetCartPos.idl
 rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp: rosidl_adapter/action_interfaces/action/SetJointPos.idl
+rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp: rosidl_adapter/action_interfaces/action/OnRobotGripper.idl
 rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp: /opt/ros/humble/share/action_msgs/msg/GoalInfo.idl
 rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp: /opt/ros/humble/share/action_msgs/msg/GoalStatus.idl
 rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp: /opt/ros/humble/share/action_msgs/msg/GoalStatusArray.idl
@@ -89,6 +90,9 @@ rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp: /o
 
 rosidl_typesupport_c/action_interfaces/action/set_joint_pos__type_support.cpp: rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_c/action_interfaces/action/set_joint_pos__type_support.cpp
+
+rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp: rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp
 
 CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp.o: CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/flags.make
 CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp.o: rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp
@@ -118,16 +122,32 @@ CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/acti
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/set_joint_pos__type_support.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_typesupport_c/action_interfaces/action/set_joint_pos__type_support.cpp -o CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/set_joint_pos__type_support.cpp.s
 
+CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.o: CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/flags.make
+CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.o: rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp
+CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.o: CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sarah/sb_ros2_ws/src/build/action_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.o -MF CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.o.d -o CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.o -c /home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp
+
+CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp > CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.i
+
+CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sarah/sb_ros2_ws/src/build/action_interfaces/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp -o CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.s
+
 # Object files for target action_interfaces__rosidl_typesupport_c
 action_interfaces__rosidl_typesupport_c_OBJECTS = \
 "CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp.o" \
-"CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/set_joint_pos__type_support.cpp.o"
+"CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/set_joint_pos__type_support.cpp.o" \
+"CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.o"
 
 # External object files for target action_interfaces__rosidl_typesupport_c
 action_interfaces__rosidl_typesupport_c_EXTERNAL_OBJECTS =
 
 libaction_interfaces__rosidl_typesupport_c.so: CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp.o
 libaction_interfaces__rosidl_typesupport_c.so: CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/set_joint_pos__type_support.cpp.o
+libaction_interfaces__rosidl_typesupport_c.so: CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp.o
 libaction_interfaces__rosidl_typesupport_c.so: CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/build.make
 libaction_interfaces__rosidl_typesupport_c.so: libaction_interfaces__rosidl_generator_c.so
 libaction_interfaces__rosidl_typesupport_c.so: /opt/ros/humble/lib/libaction_msgs__rosidl_typesupport_c.so
@@ -140,7 +160,7 @@ libaction_interfaces__rosidl_typesupport_c.so: /opt/ros/humble/lib/libunique_ide
 libaction_interfaces__rosidl_typesupport_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libaction_interfaces__rosidl_typesupport_c.so: /opt/ros/humble/lib/librcutils.so
 libaction_interfaces__rosidl_typesupport_c.so: CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sarah/sb_ros2_ws/src/build/action_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libaction_interfaces__rosidl_typesupport_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sarah/sb_ros2_ws/src/build/action_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libaction_interfaces__rosidl_typesupport_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -151,6 +171,7 @@ CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/clean
 
+CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/action_interfaces/action/on_robot_gripper__type_support.cpp
 CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/action_interfaces/action/set_cart_pos__type_support.cpp
 CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/action_interfaces/action/set_joint_pos__type_support.cpp
 	cd /home/sarah/sb_ros2_ws/src/build/action_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sarah/sb_ros2_ws/src/action_interfaces /home/sarah/sb_ros2_ws/src/action_interfaces /home/sarah/sb_ros2_ws/src/build/action_interfaces /home/sarah/sb_ros2_ws/src/build/action_interfaces /home/sarah/sb_ros2_ws/src/build/action_interfaces/CMakeFiles/action_interfaces__rosidl_typesupport_c.dir/DependInfo.cmake --color=$(COLOR)
