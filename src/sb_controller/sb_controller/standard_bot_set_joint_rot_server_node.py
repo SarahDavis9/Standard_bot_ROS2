@@ -12,29 +12,33 @@ class StandardBotSetJointRotActionServer(Node):
         super().__init__('joint_rot_server')
 
         self.goal = SetJointPos.Goal()
-
-        self._action_server = ActionServer(self, SetJointPos, "/standardbot1/set_joint_rotations", 
-                                        execute_callback = self.execute_callback, 
-                                        goal_callback = self.goal_callback,
-                                        cancel_callback = self.cancel_callback)
-
-        self.subscription = self.create_subscription(
-            Bool,
-            '/standardbot1/is_moving', 
-            self.listener_callback, 
-            10)
         
-        self.is_moving = False
-        self.subscription # prevent unused variable warning
-
         self.declare_parameter("robot_url", "default_value")
         self.declare_parameter("robot_token", "default_value")
+        self.declare_parameter("robot_name", "default_value")
 
         self.sdk = StandardBotsRobot(
             url=self.get_parameter("robot_url").value,
             token=self.get_parameter("robot_token").value,
             robot_kind=StandardBotsRobot.RobotKind.Live
             )
+        
+        self.robot_name = self.get_parameter("robot_name").value
+
+        self._action_server = ActionServer(self, SetJointPos, f"/{self.robot_name}/set_joint_rotations", 
+                                        execute_callback = self.execute_callback, 
+                                        goal_callback = self.goal_callback,
+                                        cancel_callback = self.cancel_callback)
+
+        self.subscription = self.create_subscription(
+            Bool,
+            f"/{self.robot_name}/is_moving", 
+            self.listener_callback, 
+            10)
+        
+        self.is_moving = False
+        self.subscription # prevent unused variable warning
+
 
     def listener_callback(self, data):
         self.get_logger().info('Robot motion status changed')

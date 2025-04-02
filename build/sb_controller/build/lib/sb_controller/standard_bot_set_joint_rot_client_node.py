@@ -14,8 +14,11 @@ class JointRotationActionClient(Node):
     def __init__(self):
         super().__init__("joint_rot_client")
 		
+        self.declare_parameter("robot_name", "default_value")
+        self.robot_name = self.get_parameter("robot_name").value
+
 		# Actions
-        self.joints_ac = ActionClient(self, SetJointPos, "/standardbot1/set_joint_rotations")
+        self.joints_ac = ActionClient(self, SetJointPos, f"/{self.robot_name}/set_joint_rotations")
         self.run_test()
 		
     def run_test(self):

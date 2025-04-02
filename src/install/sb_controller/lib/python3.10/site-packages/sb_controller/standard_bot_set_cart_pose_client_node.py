@@ -14,8 +14,11 @@ class CartPositionActionClient(Node):
     def __init__(self):
         super().__init__("cart_pose_client")
 		
+        self.declare_parameter("robot_name", "default_value")
+        self.robot_name = self.get_parameter("robot_name").value
+
 		# Actions
-        self.cart_ac = ActionClient(self, SetCartPos, "/standardbot1/set_cart_position")
+        self.cart_ac = ActionClient(self, SetCartPos, f"/{self.robot_name}/set_cart_position")
         self.run_test()
 		
     def run_test(self):

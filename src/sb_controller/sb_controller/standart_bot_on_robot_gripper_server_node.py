@@ -19,6 +19,7 @@ class StandardBotOnRobotActionServer(Node):
 
         self.declare_parameter("robot_url", "default_value")
         self.declare_parameter("robot_token", "default_value")
+        self.declare_parameter("robot_name", "default_value")
 
         self.sdk = StandardBotsRobot(
             url=self.get_parameter("robot_url").value,
@@ -26,8 +27,9 @@ class StandardBotOnRobotActionServer(Node):
             robot_kind=StandardBotsRobot.RobotKind.Live
             )
 
+        self.robot_name = self.get_parameter("robot_name").value
 
-        self._action_server = ActionServer(self, OnRobotGripper, "standardbot1/onrobot_gripper", 
+        self._action_server = ActionServer(self, OnRobotGripper, f"/{self.robot_name}/onrobot_gripper", 
                                         execute_callback = self.execute_callback, 
                                         goal_callback = self.goal_callback,
                                         cancel_callback = self.cancel_callback)

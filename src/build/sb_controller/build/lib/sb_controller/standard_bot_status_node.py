@@ -11,17 +11,10 @@ from std_msgs.msg import Float32MultiArray
 class MyStandardBotStatusNode(Node):
     def __init__(self):
         super().__init__("standard_bot_status")
-        self.cart_pose_publisher = self.create_publisher(Pose, "/standardbot1/cart_position", 10)
-        self.joint_rotations_publisher = self.create_publisher(Float32MultiArray, "/standardbot1/joint_rotations", 10)
-        self.is_moving_publisher = self.create_publisher(Bool, "/standardbot1/is_moving", 10)
-        timer_period = 0.1
-        self.cb_group = ReentrantCallbackGroup()
-        self.timer = self.create_timer(timer_period, self.publish_status, self.cb_group)
-        self.current_position = Pose()
-        self.is_moving = False
         
         self.declare_parameter("robot_url", "default_value")
         self.declare_parameter("robot_token", "default_value")
+        self.declare_parameter("robot_name", "default_value")
         
         # Simon:
         self.sdk = StandardBotsRobot(
@@ -29,6 +22,16 @@ class MyStandardBotStatusNode(Node):
             token=self.get_parameter("robot_token").value,
             robot_kind=StandardBotsRobot.RobotKind.Live
             )
+        
+        self.robot_name = self.get_parameter("robot_name").value
+        self.cart_pose_publisher = self.create_publisher(Pose, f"/{self.robot_name}/cart_position", 10)
+        self.joint_rotations_publisher = self.create_publisher(Float32MultiArray, f"/{self.robot_name}/joint_rotations", 10)
+        self.is_moving_publisher = self.create_publisher(Bool, f"/{self.robot_name}/is_moving", 10)
+        timer_period = 0.1
+        self.cb_group = ReentrantCallbackGroup()
+        self.timer = self.create_timer(timer_period, self.publish_status, self.cb_group)
+        self.current_position = Pose()
+        self.is_moving = False
 
     def positions_equal(self, current_position, new_position):
         self.get_logger().info(f"CURRENT = {current_position.position.x}, NEW = {new_position.position.x}")

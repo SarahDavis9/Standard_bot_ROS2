@@ -13,14 +13,10 @@ class StandardBotCameraFeed(Node):
   
   def __init__(self):
     super().__init__('standard_bot_camera_feed')
-    self.publisher_ = self.create_publisher(Image, '/standardbot1/camera_feed', 10)
-    timer_period = 0.1
-    self.cb_group = ReentrantCallbackGroup()
-    self.timer = self.create_timer(timer_period, self.timer_callback, self.cb_group)
-    self.br = CvBridge()
 
     self.declare_parameter("robot_url", "default_value")
     self.declare_parameter("robot_token", "default_value")
+    self.declare_parameter("robot_name", "default_value")
 
     # Simon:
     self.sdk = StandardBotsRobot(
@@ -28,6 +24,13 @@ class StandardBotCameraFeed(Node):
         token=self.get_parameter("robot_token").value,
         robot_kind=StandardBotsRobot.RobotKind.Live
         )
+    
+    self.robot_name = self.get_parameter("robot_name").value
+    self.publisher_ = self.create_publisher(Image, f"/{self.robot_name}/camera_feed", 10)
+    timer_period = 0.1
+    self.cb_group = ReentrantCallbackGroup()
+    self.timer = self.create_timer(timer_period, self.timer_callback, self.cb_group)
+    self.br = CvBridge()
     
   def timer_callback(self):
     self.get_logger().info("Publishing camera image!")

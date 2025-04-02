@@ -1,4 +1,0 @@
-Invoking command in '/home/sarah/sb_ros2_ws/src/build/action_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sarah/sb_ros2_ws/src/build/action_interfaces -- -j32 -l32
-Invoked command in '/home/sarah/sb_ros2_ws/src/build/action_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sarah/sb_ros2_ws/src/build/action_interfaces -- -j32 -l32
-Invoking command in '/home/sarah/sb_ros2_ws/src/build/action_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/sarah/sb_ros2_ws/src/build/action_interfaces
-Invoked command in '/home/sarah/sb_ros2_ws/src/build/action_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/sarah/sb_ros2_ws/src/build/action_interfaces

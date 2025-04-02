@@ -9,9 +9,12 @@ class ImageSubscriber(Node):
   
   def __init__(self):
     super().__init__('image_subscriber')
+
+    self.declare_parameter("robot_name", "default_value")
+    self.robot_name = self.get_parameter("robot_name").value
     self.subscription = self.create_subscription(
       Image, 
-      '/standardbot1/camera_feed', 
+      f"/{self.robot_name}/camera_feed", 
       self.listener_callback, 
       10)
     self.subscription # prevent unused variable warning

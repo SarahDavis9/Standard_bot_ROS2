@@ -10,30 +10,33 @@ class StandardBotSetCartPoseActionServer(Node):
     def __init__(self):
         super().__init__('cart_pose_server')
 
-        self.goal = SetCartPos.Goal()
-
-        self._action_server = ActionServer(self, SetCartPos, "/standardbot1/set_cart_position", 
-                                        execute_callback = self.execute_callback, 
-                                        goal_callback = self.goal_callback,
-                                        cancel_callback = self.cancel_callback)
-
-        self.subscription = self.create_subscription(
-            Bool,
-            '/standardbot1/is_moving', 
-            self.listener_callback, 
-            10)
-        
-        self.is_moving = False
-        self.subscription # prevent unused variable warning
-
         self.declare_parameter("robot_url", "default_value")
         self.declare_parameter("robot_token", "default_value")
+        self.declare_parameter("robot_name", "default_value")
 
         self.sdk = StandardBotsRobot(
             url=self.get_parameter("robot_url").value,
             token=self.get_parameter("robot_token").value,
             robot_kind=StandardBotsRobot.RobotKind.Live
             )
+
+        self.goal = SetCartPos.Goal()
+
+        self.robot_name = self.get_parameter("robot_name").value
+        
+        self._action_server = ActionServer(self, SetCartPos, f"/{self.robot_name}/set_cart_position", 
+                                        execute_callback = self.execute_callback, 
+                                        goal_callback = self.goal_callback,
+                                        cancel_callback = self.cancel_callback)
+
+        self.subscription = self.create_subscription(
+            Bool,
+            f"/{self.robot_name}/is_moving", 
+            self.listener_callback, 
+            10)
+        
+        self.is_moving = False
+        self.subscription # prevent unused variable warning
 
     def listener_callback(self, data):
         self.get_logger().info('Robot motion status changed')

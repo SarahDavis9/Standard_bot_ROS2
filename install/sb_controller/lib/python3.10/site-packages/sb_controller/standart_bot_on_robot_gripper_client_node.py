@@ -14,8 +14,11 @@ class OnRobotGripperActions(Node):
     def __init__(self):
         super().__init__("onrobot_gripper_client")
 		
+        self.declare_parameter("robot_name", "default_value")
+        self.robot_name = self.get_parameter("robot_name").value
+
 		# Actions
-        self.on_robot_gripper_client = ActionClient(self, OnRobotGripper, "/standardbot1/onrobot_gripper")
+        self.on_robot_gripper_client = ActionClient(self, OnRobotGripper, f"/{self.robot_name}/onrobot_gripper")
         self.run_test()
 		
     def run_test(self):
